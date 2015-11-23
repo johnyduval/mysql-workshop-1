@@ -1,0 +1,48 @@
+use decodemtl_addressbook
+
+describe Account;
++-----------+---------+------+-----+---------+-------+
+| Field     | Type    | Null | Key | Default | Extra |
++-----------+---------+------+-----+---------+-------+
+| something | int(11) | YES  |     | NULL    |       |
++-----------+---------+------+-----+---------+-------+
+
+alter table Account add column account_id int auto_increment primary key;
+
+describe Account;+------------+---------+------+-----+---------+----------------+
+| Field      | Type    | Null | Key | Default | Extra          |
++------------+---------+------+-----+---------+----------------+
+| something  | int(11) | YES  |     | NULL    |                |
+| account_id | int(11) | NO   | PRI | NULL    | auto_increment |
++------------+---------+------+-----+---------+----------------+
+
+alter table Account drop column something;
+
+describe Account;
++------------+---------+------+-----+---------+----------------+
+| Field      | Type    | Null | Key | Default | Extra          |
++------------+---------+------+-----+---------+----------------+
+| account_id | int(11) | NO   | PRI | NULL    | auto_increment |
++------------+---------+------+-----+---------+----------------+
+
+describe AddressBook;
+
++-----------+---------+------+-----+---------+-------+
+| Field     | Type    | Null | Key | Default | Extra |
++-----------+---------+------+-----+---------+-------+
+| something | int(11) | YES  |     | NULL    |       |
++-----------+---------+------+-----+---------+-------+
+
+alter table Entry add column entry_id int auto_increment primary key;
+alter table Entry add column entry_type enum('home' , 'work', 'other');
+alter table Entry add column entry_subtype enum ('phone', 'address', 'email');
+alter table Entry drop column something;
+
+describe Entry;
++---------------+---------------------------------+------+-----+---------+----------------+
+| Field         | Type                            | Null | Key | Default | Extra          |
++---------------+---------------------------------+------+-----+---------+----------------+
+| entry_id      | int(11)                         | NO   | PRI | NULL    | auto_increment |
+| entry_type    | enum('home','work','other')     | YES  |     | NULL    |                |
+| entry_subtype | enum('phone','address','email') | YES  |     | NULL    |                |
++---------------+---------------------------------+------+-----+---------+----------------+
