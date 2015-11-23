@@ -1,0 +1,13 @@
+
+
+mysql> create table Account (something int);
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> create table AddressBook (something int);
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> create table Entry (something int);
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> create table Test (something int);
+Query OK, 0 rows affected (0.01 sec)
