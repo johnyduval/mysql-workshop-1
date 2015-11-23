@@ -1,0 +1,7 @@
+Connecting to mySQL
+
+$ mysql-ctl start
+
+With my instances
+
+$ mysql -u johnyduval -p decodemtl
