@@ -1,0 +1,18 @@
+create database Barn;
+use Barn;
+
+create table hen (id int auto_increment primary key, birthday datetime, name varchar (30));
+create table chicks (id int auto_increment primary key, birthday datetime, name varchar (30));
+create table rooster (id int auto_increment primary key, birthday datetime, name varchar (30));
+
+alter table chicks add column maturity_date datetime;
+
+describe chicks;
++---------------+-------------+------+-----+---------+----------------+
+| Field         | Type        | Null | Key | Default | Extra          |
++---------------+-------------+------+-----+---------+----------------+
+| id            | int(11)     | NO   | PRI | NULL    | auto_increment |
+| birthday      | datetime    | YES  |     | NULL    |                |
+| name          | varchar(30) | YES  |     | NULL    |                |
+| maturity_date | datetime    | YES  |     | NULL    |                |
++---------------+-------------+------+-----+---------+----------------+
