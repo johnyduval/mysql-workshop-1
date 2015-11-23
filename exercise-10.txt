@@ -1,0 +1,37 @@
+create database Hotel;
+
+create table Rooms (id int auto_increment primary key, visitor_id int, room_size int, rentable tinyint, with_kitchen tinyint);
+create table Floors (id int auto_increment primary key, nb_windows int, with_carpet tinyint);
+create table Visitor(id int auto_increment Primary key);
+alter table Visitor add column start_date datetime;
+alter table Visitor add column end_date datetime;
+
+describe Rooms;
++--------------+------------+------+-----+---------+----------------+
+| Field        | Type       | Null | Key | Default | Extra          |
++--------------+------------+------+-----+---------+----------------+
+| id           | int(11)    | NO   | PRI | NULL    | auto_increment |
+| visitor_id   | int(11)    | YES  |     | NULL    |                |
+| room_size    | int(11)    | YES  |     | NULL    |                |
+| rentable     | tinyint(4) | YES  |     | NULL    |                |
+| with_kitchen | tinyint(4) | YES  |     | NULL    |                |
++--------------+------------+------+-----+---------+----------------+
+
+describe Floors;
++-------------+------------------------+------+-----+---------+----------------+
+| Field       | Type                   | Null | Key | Default | Extra          |
++-------------+------------------------+------+-----+---------+----------------+
+| id          | int(11)                | NO   | PRI | NULL    | auto_increment |
+|nb_windows    | int(11)                | YES  |     | NULL    |               |
+|with_carpet   | enum('with','without') | YES  |     | NULL    |               |
++-------------+------------------------+------+-----+---------+----------------+
+
+describe Visitor;
++------------+----------+------+-----+---------+----------------+
+| Field      | Type     | Null | Key | Default | Extra          |
++------------+----------+------+-----+---------+----------------+
+| id         | int(11)  | NO   | PRI | NULL    | auto_increment |
+| start_date | datetime | YES  |     | NULL    |                |
+| end_date   | datetime | YES  |     | NULL    |                |
++------------+----------+------+-----+---------+----------------+
+
